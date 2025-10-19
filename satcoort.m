@@ -1,11 +1,15 @@
 function [ Xk,Yk,Zk ] = satcoort(tr ,rsat , rrcv, atx ,stnum, f,tmn1,tmn2 );
+% atx=atx1;
 dPCO =  atx.sat.neu;
 % tmn1 = juliandate(datetime('2015-03-15 00:00:00')) - juliandate(datetime('2000-01-01 12:00:00'));
 % tmn2 = juliandate(datetime('2015-03-14 00:00:00')) - juliandate(datetime('2000-01-01 12:00:00'));
+% i=3;
+% tr=temission(i,1);
+% rsat=rasat(i,:);
 if tr>=0;
     tmn=tmn1+tr/86400;
 else
-    tmn=tmn1-tr/86400;
+    tmn=tmn1+tr/86400;
 end
 XMJD=tmn;
 
